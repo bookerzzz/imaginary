@@ -1,3 +1,7 @@
+build:
+	mkdir -p bin
+	GOBIN=bin/ go install
+
 test:
 	go test
 
