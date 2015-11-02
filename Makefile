@@ -1,6 +1,9 @@
 test:
 	go test
 
+apt-deps:
+	apt-get install libgsf-1-dev libvips-dev
+
 bench:
 	go test -bench=.
 
@@ -14,3 +17,5 @@ docker-push:
 	docker push h2non/imaginary:$(VERSION)
 
 docker: docker-build docker-push
+
+.PHONY: test bench test-load docker-build docker-push docker apt-deps
